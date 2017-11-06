@@ -12,16 +12,21 @@ function add(){
         alert("Ingrese su mensaje..");
          return false;
     }
-    /*var d = new Date();
-    var n = d.toLocaleTimeString();*/
-
+    
     var textNewComment = document.createTextNode(comments);
     var contenedorElemento = document.createElement('p');
     contenedorElemento.appendChild(textNewComment);    
     newComments.appendChild(contenedorElemento);
 
     cont.appendChild(newComments);
-
+    document.getElementById("count").innerHTML = "140";
 }
+var comment = document.getElementById("comment");
+comment.onkeydown = function (){
+    var num = document.getElementById("count");
+    var texto = document.getElementById("comment");
+    var caracter = texto.value.length;
+    num.innerHTML = 140 - caracter;
+};
 
- var cont = document.getElementClassName("textarea").maxLength;
+ 
